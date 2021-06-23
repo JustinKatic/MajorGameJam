@@ -1,1 +1,1 @@
-# MajorJameJam
+# MajorGameJam
