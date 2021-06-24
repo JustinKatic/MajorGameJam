@@ -7,46 +7,70 @@ public class Telekinesis : MonoBehaviour
     public LayerMask Grabbale;
     Transform cameraTransform;
     private GameObject pickedUpObj;
-    public float speed = 10f;
+    private Rigidbody pickedUpObjRB;
+    public float objFollowSpeed = 4f;
+
+    public Transform telekObj;
+    float telekObjZPos;
 
     void Start()
     {
         cameraTransform = Camera.main.transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (pickedUpObj != null)
         {
-            float step = speed * Time.deltaTime;
+            float step = objFollowSpeed * Time.deltaTime;
+            pickedUpObj.transform.position = Vector3.MoveTowards(pickedUpObj.transform.position, telekObj.position, step);
 
-            pickedUpObj.transform.position = new Vector3();
 
             if (Input.GetKey(KeyCode.Q))
             {
-                pickedUpObj.transform.position = Vector3.MoveTowards(pickedUpObj.transform.position, transform.position, step);
+                telekObjZPos -= Time.deltaTime * objFollowSpeed;
+                telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
             }
             if (Input.GetKey(KeyCode.E))
             {
-                pickedUpObj.transform.position = Vector3.MoveTowards(pickedUpObj.transform.position, -transform.position, step);
+                telekObjZPos += Time.deltaTime * objFollowSpeed;
+                telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
             }
         }
+    }
 
+    private void Update()
+    {
         //If mouse button down and raycast is over grabbale object set picked up object to item hit.
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity, Grabbale))
             {
-                Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
                 pickedUpObj = hit.collider.gameObject;
+                Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
+
+                pickedUpObjRB = pickedUpObj.transform.GetComponent<Rigidbody>();
+                pickedUpObjRB.useGravity = false;
+                pickedUpObjRB.constraints = RigidbodyConstraints.FreezeRotation;
+
+                float distBetweenPickedUpObjAndPlayer = Vector3.Distance(pickedUpObj.transform.position, transform.position);
+                telekObj.localPosition = new Vector3(0, 0, distBetweenPickedUpObjAndPlayer);
+
+                telekObjZPos = distBetweenPickedUpObjAndPlayer;
             }
         }
 
 
         if (Input.GetMouseButtonUp(0))
         {
-            pickedUpObj = null;
+            if (pickedUpObj != null)
+            {
+                pickedUpObjRB.useGravity = true;
+                pickedUpObjRB.constraints = RigidbodyConstraints.None;
+                pickedUpObjRB = null;
+                pickedUpObj = null;
+            }
         }
     }
 }
