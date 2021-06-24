@@ -3,7 +3,12 @@ guid: 97a767e674096a94db0560dfc684f65a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Block_SemiCircle
+    second: {fileID: 2100000, guid: 3af24745f4ba19c448ca67382a549686, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

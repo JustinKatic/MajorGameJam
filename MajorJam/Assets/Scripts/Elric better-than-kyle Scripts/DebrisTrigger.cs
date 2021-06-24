@@ -11,7 +11,7 @@ public class DebrisTrigger : MonoBehaviour
     public AudioSource audioFX;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             fx1.Play();
             fx2.Play();
