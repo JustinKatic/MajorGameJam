@@ -3,7 +3,12 @@ guid: fc782710f3501a04cad410b15a5ce11f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_Block_TrianglePrism1
+    second: {fileID: 2100000, guid: 9e23a66c9504fa64e85c070da38936e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
