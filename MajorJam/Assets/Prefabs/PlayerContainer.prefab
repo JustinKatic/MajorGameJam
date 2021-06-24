@@ -120,13 +120,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635475833}
-  m_LocalRotation: {x: 0.026709612, y: 0.10617531, z: 0.24249393, w: 0.96395546}
+  m_LocalRotation: {x: -0.003141241, y: -0.013962035, z: -0.000043862605, w: 0.99989766}
   m_LocalPosition: {x: -0.16519621, y: -0.23500001, z: 3.656637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6179079601269175049}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 12.571, z: 28.241}
+  m_LocalEulerAnglesHint: {x: -0.36, y: -1.6, z: 0}
 --- !u!33 &635475836
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -251,7 +251,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objFollowSpeed: 4
+  pullPushSpeed: 4
   telekObj: {fileID: 1977943106}
+  rotateSpeed: 100
 --- !u!1 &6179079601269175030
 GameObject:
   m_ObjectHideFlags: 0
