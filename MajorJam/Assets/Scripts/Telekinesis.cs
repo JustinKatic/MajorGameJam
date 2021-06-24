@@ -16,6 +16,7 @@ public class Telekinesis : MonoBehaviour
 
     PlayerInput _input;
     InputActionMap _playerMovement;
+    public float rotateSpeed;
 
     void Start()
     {
@@ -42,6 +43,18 @@ public class Telekinesis : MonoBehaviour
                 telekObjZPos += Time.deltaTime * objFollowSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
             }
+            //rotate left
+            if (Input.GetKey(KeyCode.A))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.up, rotateSpeed * Time.deltaTime);
+            //rotate right
+            if (Input.GetKey(KeyCode.D))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.up, rotateSpeed * Time.deltaTime);
+            //rotate up
+            if (Input.GetKey(KeyCode.W))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.right, rotateSpeed * Time.deltaTime);
+            //roate down
+            if (Input.GetKey(KeyCode.S))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.right, rotateSpeed * Time.deltaTime);
         }
     }
 
