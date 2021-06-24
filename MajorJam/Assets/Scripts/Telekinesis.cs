@@ -68,8 +68,11 @@ public class Telekinesis : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity, Grabbale))
             {
-                if (hit.transform.GetComponent<BuildingBlocks>().grabbable == false)
-                    return;
+                if (hit.transform.GetComponent<BuildingBlocks>())
+                    if (hit.transform.GetComponent<BuildingBlocks>().grabbable == false)
+                        return;
+
+
                 DisableAction();
                 pickedUpObj = hit.collider.gameObject;
                 Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
