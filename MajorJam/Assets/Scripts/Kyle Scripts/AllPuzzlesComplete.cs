@@ -6,16 +6,24 @@ using UnityEngine.Events;
 
 public class AllPuzzlesComplete : MonoBehaviour
 {
-    UnityEvent PuzzlesCompleted;
+    public UnityEvent PuzzlesCompleted;
 
-    List<ObjectFits> _checkAllPuzzlesComplete;
+    public List<ObjectFits> _checkAllPuzzlesComplete;
 
     // Start is called before the first frame update
     void Start()
     {
         _checkAllPuzzlesComplete = new List<ObjectFits>();
 
-        _checkAllPuzzlesComplete = GameObject.FindObjectsOfType<ObjectFits>().ToList();
+        if (_checkAllPuzzlesComplete.Count == 0)
+        {
+            _checkAllPuzzlesComplete = GameObject.FindObjectsOfType<ObjectFits>().ToList();
+
+        }
+        else
+        {
+            Debug.Log("No Puzzles Attached to" + gameObject.name);
+        }
 
     }
 

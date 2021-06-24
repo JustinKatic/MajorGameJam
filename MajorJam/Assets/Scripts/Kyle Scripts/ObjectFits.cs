@@ -9,10 +9,10 @@ public class ObjectFits : MonoBehaviour
     [SerializeField] GameObject _puzzlePiece;
 
     public float _tolerance = 20f;
-    public Vector3 _fitRotation;
+    Vector3 _fitRotation;
     public bool _objectFits = false;
 
-    UnityEvent PuzzlesComplete;
+    public UnityEvent PuzzlesComplete;
     AllPuzzlesComplete _puzzleCheck;
 
     // Start is called before the first frame update
