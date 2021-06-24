@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Telekinesis : MonoBehaviour
 {
@@ -13,9 +14,14 @@ public class Telekinesis : MonoBehaviour
     public Transform telekObj;
     float telekObjZPos;
 
+    PlayerInput _input;
+    InputActionMap _playerMovement;
+
     void Start()
     {
         cameraTransform = Camera.main.transform;
+        _input = GetComponent<PlayerInput>();
+        _playerMovement = _input.actions.FindActionMap("Player");
     }
 
     private void FixedUpdate()
@@ -47,6 +53,7 @@ public class Telekinesis : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity, Grabbale))
             {
+                DisableAction();
                 pickedUpObj = hit.collider.gameObject;
                 Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
 
@@ -70,7 +77,17 @@ public class Telekinesis : MonoBehaviour
                 pickedUpObjRB.constraints = RigidbodyConstraints.None;
                 pickedUpObjRB = null;
                 pickedUpObj = null;
+                EnableAction();
             }
         }
+    }
+
+    void DisableAction()
+    {
+        _playerMovement.FindAction("Move").Disable();
+    }
+    void EnableAction()
+    {
+        _playerMovement.FindAction("Move").Enable();
     }
 }
