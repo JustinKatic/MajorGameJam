@@ -15,7 +15,6 @@ public class Telekinesis : MonoBehaviour
 
     public Transform telekObj;
     float telekObjZPos;
-    bool _pickedUp = false;
 
     PlayerInput _input;
     InputActionMap _playerMovement;
@@ -69,6 +68,8 @@ public class Telekinesis : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity, Grabbale))
             {
+                if (hit.transform.GetComponent<BuildingBlocks>().grabbable == false)
+                    return;
                 DisableAction();
                 pickedUpObj = hit.collider.gameObject;
                 Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
@@ -94,10 +95,24 @@ public class Telekinesis : MonoBehaviour
                 pickedUpObjRB = null;
                 pickedUpObj = null;
                 EnableAction();
-                _pickedUp = false;
             }
         }
     }
+
+
+    public void PlaceObj()
+    {
+        if (pickedUpObj != null)
+        {
+            pickedUpObjRB.useGravity = false;
+            pickedUpObjRB.constraints = RigidbodyConstraints.None;
+            pickedUpObjRB.isKinematic = true;
+            pickedUpObjRB = null;
+            pickedUpObj = null;
+            EnableAction();
+        }
+    }
+
 
     void DisableAction()
     {
