@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Grabbale:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   objFollowSpeed: 4
   telekObj: {fileID: 0}
 --- !u!1001 &1833658004
@@ -341,6 +341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 635475833, guid: 65ce288c9c9fab643b74270b8d9f5b0e, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3195696041082666750, guid: 65ce288c9c9fab643b74270b8d9f5b0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03480339
