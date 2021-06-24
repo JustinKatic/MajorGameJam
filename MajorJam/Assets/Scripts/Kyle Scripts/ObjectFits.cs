@@ -12,7 +12,8 @@ public class ObjectFits : MonoBehaviour
     Vector3 _fitRotation;
     public bool _objectFits = false;
 
-    public UnityEvent PuzzlesComplete;
+    public UnityEvent PuzzleComplete;
+    public UnityEvent WrongObjectPlaced;
     AllPuzzlesComplete _puzzleCheck;
 
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class ObjectFits : MonoBehaviour
 
         if (_puzzleCheck != null)
         {
-            PuzzlesComplete.AddListener(_puzzleCheck.CheckAllPuzzlesComplete);
+            PuzzleComplete.AddListener(_puzzleCheck.CheckAllPuzzlesComplete);
         }
 
         if (_puzzlePiece != null)
@@ -45,8 +46,8 @@ public class ObjectFits : MonoBehaviour
         {
             if (CheckRotation(_puzzlePiece.transform))
             {
-                if (PuzzlesComplete != null)
-                    PuzzlesComplete.Invoke();
+                if (PuzzleComplete != null)
+                    PuzzleComplete.Invoke();
 
                 //Play Animation
                 
@@ -58,7 +59,13 @@ public class ObjectFits : MonoBehaviour
     {
         if (Mathf.Abs(_fitRotation.x - obj.eulerAngles.x) < _tolerance  && Mathf.Abs(_fitRotation.y - obj.eulerAngles.y) < _tolerance && Mathf.Abs(_fitRotation.z - obj.eulerAngles.z) < _tolerance)
         {
+            _objectFits = true;
+            Debug.Log(_objectFits);
 
+            return true;
+        }
+        if (Mathf.Abs(-_fitRotation.x - obj.eulerAngles.x) < _tolerance && Mathf.Abs(-_fitRotation.y - obj.eulerAngles.y) < _tolerance && Mathf.Abs(-_fitRotation.z - obj.eulerAngles.z) < _tolerance)
+        {
             _objectFits = true;
             Debug.Log(_objectFits);
 
@@ -68,6 +75,8 @@ public class ObjectFits : MonoBehaviour
         {
             _objectFits = false;
             Debug.Log(_objectFits);
+            if (WrongObjectPlaced != null)
+                WrongObjectPlaced.Invoke();
 
             return false;
         }
