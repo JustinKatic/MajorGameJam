@@ -10,12 +10,15 @@ public class Telekinesis : MonoBehaviour
     private GameObject pickedUpObj;
     private Rigidbody pickedUpObjRB;
     public float objFollowSpeed = 4f;
+    public float pullPushSpeed = 4f;
+
 
     public Transform telekObj;
     float telekObjZPos;
 
     PlayerInput _input;
     InputActionMap _playerMovement;
+    public float rotateSpeed = 100;
 
     void Start()
     {
@@ -34,14 +37,26 @@ public class Telekinesis : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Q))
             {
-                telekObjZPos -= Time.deltaTime * objFollowSpeed;
+                telekObjZPos -= Time.deltaTime * pullPushSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
             }
             if (Input.GetKey(KeyCode.E))
             {
-                telekObjZPos += Time.deltaTime * objFollowSpeed;
+                telekObjZPos += Time.deltaTime * pullPushSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
             }
+            //rotate left
+            if (Input.GetKey(KeyCode.A))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.up, rotateSpeed * Time.deltaTime);
+            //rotate right
+            if (Input.GetKey(KeyCode.D))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.up, rotateSpeed * Time.deltaTime);
+            //rotate up
+            if (Input.GetKey(KeyCode.W))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.right, rotateSpeed * Time.deltaTime);
+            //roate down
+            if (Input.GetKey(KeyCode.S))
+                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.right, rotateSpeed * Time.deltaTime);
         }
     }
 
