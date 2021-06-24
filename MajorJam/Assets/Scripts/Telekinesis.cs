@@ -15,6 +15,7 @@ public class Telekinesis : MonoBehaviour
 
     public Transform telekObj;
     float telekObjZPos;
+    bool _pickedUp = false;
 
     PlayerInput _input;
     InputActionMap _playerMovement;
@@ -58,6 +59,9 @@ public class Telekinesis : MonoBehaviour
             if (Input.GetKey(KeyCode.S))
                 pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.right, rotateSpeed * Time.deltaTime);
         }
+
+        Debug.Log("Queternion" + pickedUpObj.transform.rotation.eulerAngles);
+        Debug.Log(pickedUpObj.transform.rotation);
     }
 
     private void Update()
@@ -93,6 +97,7 @@ public class Telekinesis : MonoBehaviour
                 pickedUpObjRB = null;
                 pickedUpObj = null;
                 EnableAction();
+                _pickedUp = false;
             }
         }
     }
