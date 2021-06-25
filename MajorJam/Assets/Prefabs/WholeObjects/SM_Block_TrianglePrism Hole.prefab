@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108203622844669883}
   m_Layer: 0
-  m_Name: SM_Block_TrianglePrism
+  m_Name: SM_Block_TrianglePrism Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,10 @@ GameObject:
   - component: {fileID: 6234455963438871058}
   - component: {fileID: 3671319057458154957}
   - component: {fileID: 5437330837643737736}
-  m_Layer: 0
+  - component: {fileID: 9029036195547276744}
+  - component: {fileID: 2638104698155414138}
+  - component: {fileID: 1746460499694827979}
+  m_Layer: 10
   m_Name: SM_Block_TrianglePrism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +115,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9029036195547276744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876776758147656009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e666466e158183e4193ff83c4be6d435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedMatch: {fileID: 0}
+--- !u!114 &2638104698155414138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876776758147656009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 0}
+--- !u!64 &1746460499694827979
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876776758147656009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4142140856729224587, guid: fc782710f3501a04cad410b15a5ce11f, type: 3}
