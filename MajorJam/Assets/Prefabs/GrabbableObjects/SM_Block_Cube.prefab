@@ -134,6 +134,8 @@ MonoBehaviour:
   grabbable: 1
   rayCastDown: 0
   woodSlottingInHoleSound: {fileID: 0}
+  hitWallSound: {fileID: 8300000, guid: a472a502b0eebc346b82bc5af24ec3c3, type: 3}
+  wrongObjectSound: {fileID: 8300000, guid: bdc88bb8e2135784ab6c7762711f02c5, type: 3}
 --- !u!82 &5584363568090668175
 AudioSource:
   m_ObjectHideFlags: 0

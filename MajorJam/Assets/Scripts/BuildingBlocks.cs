@@ -29,6 +29,9 @@ public class BuildingBlocks : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip woodSlottingInHoleSound;
+    public AudioClip hitWallSound;
+    public AudioClip wrongObjectSound;
+
 
 
     private void Start()
@@ -64,6 +67,8 @@ public class BuildingBlocks : MonoBehaviour
         {
             Debug.Log("HIT WALL");
             telekinesis.DropObj();
+            audioSource.PlayOneShot(hitWallSound);
+
         }
     }
 
@@ -91,6 +96,7 @@ public class BuildingBlocks : MonoBehaviour
             {
                 Rigidbody tempObj = telekinesis.pickedUpObjRB;
                 telekinesis.DropObj();
+                audioSource.PlayOneShot(wrongObjectSound);
                 if (tempObj != null)
                     tempObj.AddForce(-hit.transform.position,ForceMode.Impulse);
             }
