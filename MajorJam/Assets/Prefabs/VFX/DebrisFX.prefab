@@ -53,6 +53,7 @@ MonoBehaviour:
   fx3: {fileID: 2539900036265674304}
   fx4: {fileID: 2539900037006871160}
   audioFX: {fileID: 3834960798029828434}
+  camShake: {fileID: 0}
 --- !u!82 &3834960798029828434
 AudioSource:
   m_ObjectHideFlags: 0

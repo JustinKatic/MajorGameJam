@@ -9,6 +9,7 @@ public class DebrisTrigger : MonoBehaviour
     public ParticleSystem fx3;
     public ParticleSystem fx4;
     public AudioSource audioFX;
+    public Animator camShake;
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -18,6 +19,7 @@ public class DebrisTrigger : MonoBehaviour
             fx3.Play();
             fx4.Play();
             audioFX.Play();
+            camShake.Play("CamShake");
         }
     }
 }
