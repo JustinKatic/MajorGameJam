@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SM_Block_TrianglePrism
+    second: {fileID: 2100000, guid: 9e23a66c9504fa64e85c070da38936e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: SM_Block_TrianglePrism1
     second: {fileID: 2100000, guid: 9e23a66c9504fa64e85c070da38936e8, type: 2}
   materials:
