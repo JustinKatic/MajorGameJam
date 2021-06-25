@@ -14,9 +14,13 @@ public class BuildingBlocks : MonoBehaviour
     public float placementSpeed = 0.5f;
     public float placementRotationSpeed = 0.5f;
 
+    public bool rayCastDown;
+
     RaycastHit hit;
 
     Transform objToMoveTowards;
+
+    Vector3 raycastDir;
 
     private void Start()
     {
@@ -33,7 +37,12 @@ public class BuildingBlocks : MonoBehaviour
 
     public void CheckForCorrectObj()
     {
-        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(Vector3.down), out hit, 1.5f, BuildingBlockLayer))
+        if (rayCastDown)
+            raycastDir = Vector3.down;
+        else
+            raycastDir = Vector3.up;
+
+        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 1.5f, BuildingBlockLayer))
         {
             if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
