@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class Telekinesis : MonoBehaviour
 {
     public LayerMask Grabbale;
+    public LayerMask Wall;
+
     Transform cameraTransform;
     private GameObject pickedUpObj;
-    private Rigidbody pickedUpObjRB;
+    public Rigidbody pickedUpObjRB;
     public float objFollowSpeed = 4f;
     public float pullPushSpeed = 4f;
     public Animator handAnimator;
@@ -22,6 +24,8 @@ public class Telekinesis : MonoBehaviour
     public float rotateSpeed = 100;
 
     bool hasAnimated = false;
+
+
 
     private void Awake()
     {
@@ -71,7 +75,7 @@ public class Telekinesis : MonoBehaviour
 
                     if (Input.GetKey(KeyCode.E))
                     {
-                        ChangeAnimation( "isPushing","isHolding", "isGrabbing");
+                        ChangeAnimation("isPushing", "isHolding", "isGrabbing");
 
                         telekObjZPos += Time.deltaTime * pullPushSpeed;
                         telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
@@ -124,15 +128,22 @@ public class Telekinesis : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             IdleAnimation();
-            if (pickedUpObj != null)
-            {
-                hasAnimated = false;
-                pickedUpObjRB.useGravity = true;
-                pickedUpObjRB.constraints = RigidbodyConstraints.None;
-                pickedUpObjRB = null;
-                pickedUpObj = null;
-                EnableAction();
-            }
+
+            DropObj();
+
+        }
+    }
+
+    public void DropObj()
+    {
+        if (pickedUpObj != null)
+        {
+            hasAnimated = false;
+            pickedUpObjRB.useGravity = true;
+            pickedUpObjRB.constraints = RigidbodyConstraints.None;
+            pickedUpObjRB = null;
+            pickedUpObj = null;
+            EnableAction();
         }
     }
 

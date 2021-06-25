@@ -130,7 +130,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &233438305
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc9b19e86a265642803976b953ee920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iCanMatchWith: {fileID: 11400000, guid: 547a7a6ade6a096418d79a8a3d0c3fff, type: 2}
-  myCounter: {fileID: 0}
+  iCanMatchWith: {fileID: 11400000, guid: a96738bdc3b6674409ca6cdaf1f86f3a, type: 2}
+  myCounter: {fileID: 11400000, guid: 450100465d2640f4698d299abaf13e14, type: 2}
   BuildingBlockLayer:
     serializedVersion: 2
     m_Bits: 1024
   grabbable: 1
-  placementSpeed: 0.5
   placementRotationSpeed: 1.5
+  rayCastDown: 0

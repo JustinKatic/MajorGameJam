@@ -11,8 +11,8 @@ public class BuildingBlocks : MonoBehaviour
     bool shouldMoveTowards = false;
     public bool grabbable = true;
 
-    private float placementSpeed = 0.5f;
-    public float placementRotationSpeed = 0.5f;
+    private float placementSpeed = 1.5f;
+    private float placementRotationSpeed = 3f;
 
     public bool rayCastDown;
 
@@ -26,6 +26,7 @@ public class BuildingBlocks : MonoBehaviour
     Quaternion startRot;
 
     DebrisTrigger debrisTrigger;
+
 
     private void Start()
     {
@@ -44,10 +45,20 @@ public class BuildingBlocks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Reset")
+        if (other.gameObject.tag == "Reset")
         {
             transform.position = startPos;
             transform.rotation = startRot;
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("HIT WALL");
+            telekinesis.DropObj();
         }
     }
 
@@ -69,25 +80,34 @@ public class BuildingBlocks : MonoBehaviour
                 objToMoveTowards = hit.transform;
             }
             else
-                Debug.Log("WRONG OBJ U FUCKING IDIOT");
+            {
+                Rigidbody tempObj = telekinesis.pickedUpObjRB;
+                telekinesis.DropObj();
+                if (tempObj != null)
+                    tempObj.AddForce(-hit.transform.position * 30);
+            }
+
         }
-        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1, Color.red);
+        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1f, Color.red);
     }
 
     public void MoveBlocksTowards()
     {
         if (shouldMoveTowards)
         {
-            //Movetowards position
-            float step = placementSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
-
-            transform.GetComponent<MeshCollider>().enabled = false;
+            transform.GetComponent<Collider>().enabled = false;
 
             transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 
+            if (Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < .1f)
+            {
+                float step = placementSpeed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
+            }
+
+
             //if (transform.position == objToMoveTowards.position && transform.rotation == objToMoveTowards.rotation)
-            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < 1f)
+            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f)
             {
                 shouldMoveTowards = false;
                 //objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
