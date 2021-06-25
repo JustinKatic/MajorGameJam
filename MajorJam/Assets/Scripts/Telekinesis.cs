@@ -20,6 +20,8 @@ public class Telekinesis : MonoBehaviour
     InputActionMap _playerMovement;
     public float rotateSpeed = 100;
 
+    bool hasAnimated = false;
+
     void Start()
     {
         cameraTransform = Camera.main.transform;
@@ -34,29 +36,48 @@ public class Telekinesis : MonoBehaviour
             float step = objFollowSpeed * Time.deltaTime;
             pickedUpObj.transform.position = Vector3.MoveTowards(pickedUpObj.transform.position, telekObj.position, step);
 
-
-            if (Input.GetKey(KeyCode.Q))
+            if (!hasAnimated)
             {
                 telekObjZPos -= Time.deltaTime * pullPushSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
+                if (Vector3.Distance(transform.position, telekObj.position) <= 2.2f)
+                {
+                    hasAnimated = true;
+                }
             }
-            if (Input.GetKey(KeyCode.E))
+            else
             {
-                telekObjZPos += Time.deltaTime * pullPushSpeed;
-                telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
+                if (Vector3.Distance(transform.position, telekObj.position) >= 2.2f)
+                {
+                    if (Input.GetKey(KeyCode.Q))
+                    {
+                        telekObjZPos -= Time.deltaTime * pullPushSpeed;
+                        telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
+                    }
+                }
+
+                if (Vector3.Distance(transform.position, telekObj.position) <= 7f)
+                {
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        telekObjZPos += Time.deltaTime * pullPushSpeed;
+                        telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
+                    }
+                }
+
+                //rotate left
+                if (Input.GetKey(KeyCode.A))
+                    pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.up, rotateSpeed * Time.deltaTime);
+                //rotate right
+                if (Input.GetKey(KeyCode.D))
+                    pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.up, rotateSpeed * Time.deltaTime);
+                //rotate up
+                if (Input.GetKey(KeyCode.W))
+                    pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.right, rotateSpeed * Time.deltaTime);
+                //roate down
+                if (Input.GetKey(KeyCode.S))
+                    pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.right, rotateSpeed * Time.deltaTime);
             }
-            //rotate left
-            if (Input.GetKey(KeyCode.A))
-                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.up, rotateSpeed * Time.deltaTime);
-            //rotate right
-            if (Input.GetKey(KeyCode.D))
-                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.up, rotateSpeed * Time.deltaTime);
-            //rotate up
-            if (Input.GetKey(KeyCode.W))
-                pickedUpObj.transform.RotateAround(telekObj.transform.position, transform.right, rotateSpeed * Time.deltaTime);
-            //roate down
-            if (Input.GetKey(KeyCode.S))
-                pickedUpObj.transform.RotateAround(telekObj.transform.position, -transform.right, rotateSpeed * Time.deltaTime);
         }
     }
 
@@ -93,6 +114,7 @@ public class Telekinesis : MonoBehaviour
         {
             if (pickedUpObj != null)
             {
+                hasAnimated = false;
                 pickedUpObjRB.useGravity = true;
                 pickedUpObjRB.constraints = RigidbodyConstraints.None;
                 pickedUpObjRB = null;
@@ -107,6 +129,7 @@ public class Telekinesis : MonoBehaviour
     {
         if (pickedUpObj != null)
         {
+            hasAnimated = false;
             pickedUpObjRB.useGravity = false;
             pickedUpObjRB.constraints = RigidbodyConstraints.None;
             pickedUpObjRB.isKinematic = true;
