@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711275582833583747}
   m_Layer: 0
-  m_Name: SM_Block_Sphere
+  m_Name: SM_Block_Sphere Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186096686798748729}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -42,7 +42,10 @@ GameObject:
   - component: {fileID: 4677354673172875063}
   - component: {fileID: 8369561904258792328}
   - component: {fileID: 3516449923271972521}
-  m_Layer: 0
+  - component: {fileID: 426558649}
+  - component: {fileID: 426558647}
+  - component: {fileID: 426558648}
+  m_Layer: 10
   m_Name: SM_Block_Sphere_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +115,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &426558649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043034862533295578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8390200210595714047, guid: 7a3278bec1b4c764686f2b6da7703b19, type: 3}
+--- !u!114 &426558647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043034862533295578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 0}
+--- !u!114 &426558648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043034862533295578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e666466e158183e4193ff83c4be6d435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedMatch: {fileID: 11400000, guid: 547a7a6ade6a096418d79a8a3d0c3fff, type: 2}

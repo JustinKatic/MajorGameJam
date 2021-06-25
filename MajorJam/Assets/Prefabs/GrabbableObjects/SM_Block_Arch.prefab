@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &485624935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485624936}
+  - component: {fileID: 485624937}
+  m_Layer: 6
+  m_Name: RayPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485624936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485624935}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.659, y: -0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 497886098346008564}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &485624937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485624935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc9b19e86a265642803976b953ee920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iCanMatchWith: {fileID: 11400000, guid: 8b3a9ac743df27448a3a4d53c9917ef6, type: 2}
+  myCounter: {fileID: 0}
+  BuildingBlockLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  grabbable: 1
+  placementSpeed: 0.5
+  placementRotationSpeed: 0.5
 --- !u!1 &6130180857395572276
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +64,6 @@ GameObject:
   - component: {fileID: 450190160146233517}
   - component: {fileID: 1002413671122644554}
   - component: {fileID: 1931580437}
-  - component: {fileID: 742348790}
   m_Layer: 6
   m_Name: SM_Block_Arch_low
   m_TagString: Untagged
@@ -28,13 +78,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6130180857395572276}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.7086819, y: 1.45519135e-11, z: -1.45519135e-11, w: 0.70552826}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 485624936}
   m_Father: {fileID: 7508018328528482462}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.254, y: 0, z: 0}
 --- !u!33 &4216164186808699910
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -114,26 +165,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5159961023347624661, guid: c39f98621d78bb64695e27834118f719, type: 3}
---- !u!114 &742348790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6130180857395572276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc9b19e86a265642803976b953ee920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iCanMatchWith: {fileID: 11400000, guid: 8b3a9ac743df27448a3a4d53c9917ef6, type: 2}
-  myCounter: {fileID: 0}
-  BuildingBlockLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  grabbable: 1
-  placementSpeed: 0.5
-  placementRotationSpeed: 1.5
 --- !u!1 &7168048694992808484
 GameObject:
   m_ObjectHideFlags: 0
