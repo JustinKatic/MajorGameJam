@@ -38,7 +38,8 @@ public class BuildingBlocks : MonoBehaviour
 
     void Update()
     {
-        CheckForCorrectObj();
+        if (telekinesis.pickedUpObj)
+            CheckForCorrectObj();
         MoveBlocksTowards();
     }
 
@@ -70,10 +71,12 @@ public class BuildingBlocks : MonoBehaviour
         else
             raycastDir = Vector3.up;
 
-        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 3f, BuildingBlockLayer))
+
+        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 1.5f, BuildingBlockLayer))
         {
             if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
+                transform.GetComponent<Collider>().enabled = false;
                 shouldMoveTowards = true;
                 grabbable = false;
                 telekinesis.PlaceObj();
@@ -84,18 +87,17 @@ public class BuildingBlocks : MonoBehaviour
                 Rigidbody tempObj = telekinesis.pickedUpObjRB;
                 telekinesis.DropObj();
                 if (tempObj != null)
-                    tempObj.AddForce(-hit.transform.position * 30);
+                    tempObj.AddForce(-hit.transform.position,ForceMode.Impulse);
             }
-
         }
-        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1.5f, Color.red);
     }
 
     public void MoveBlocksTowards()
     {
         if (shouldMoveTowards)
         {
-            transform.GetComponent<Collider>().enabled = false;
+
 
             transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 

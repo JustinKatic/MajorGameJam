@@ -9,7 +9,7 @@ public class Telekinesis : MonoBehaviour
     public LayerMask Wall;
 
     Transform cameraTransform;
-    private GameObject pickedUpObj;
+    public GameObject pickedUpObj;
     public Rigidbody pickedUpObjRB;
     public float objFollowSpeed = 4f;
     public float pullPushSpeed = 4f;
