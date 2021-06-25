@@ -23,6 +23,10 @@ public class Telekinesis : MonoBehaviour
 
     bool hasAnimated = false;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     void Start()
     {
         cameraTransform = Camera.main.transform;
