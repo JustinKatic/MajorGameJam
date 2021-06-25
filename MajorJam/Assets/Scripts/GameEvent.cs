@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
@@ -31,4 +31,6 @@ public class GameEvent : ScriptableObject
         if (eventListeners.Contains(listener))
             eventListeners.Remove(listener);
     }
+
+    
 }
