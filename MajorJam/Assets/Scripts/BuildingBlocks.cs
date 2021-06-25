@@ -11,7 +11,7 @@ public class BuildingBlocks : MonoBehaviour
     bool shouldMoveTowards = false;
     public bool grabbable = true;
 
-    private float placementSpeed = .5f;
+    private float placementSpeed = 0.5f;
     public float placementRotationSpeed = 0.5f;
 
     public bool rayCastDown;

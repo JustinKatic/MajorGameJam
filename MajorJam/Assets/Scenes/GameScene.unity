@@ -776,6 +776,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2539900036265674305, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539900036265674305, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539900036274153572, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539900036274153572, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539900037006871161, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539900037006871161, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834960797441330580, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834960797441330580, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.23
+      objectReference: {fileID: 0}
     - target: {fileID: 3834960798029828432, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -827,6 +859,10 @@ PrefabInstance:
     - target: {fileID: 3834960798029828435, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
       propertyPath: m_Name
       value: DebrisFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834960798029828435, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
+      propertyPath: m_TagString
+      value: Debris
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83fec09be7dd4948bd6332de2a988ad, type: 3}
@@ -1231,7 +1267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCounter: {fileID: 11400000, guid: 450100465d2640f4698d299abaf13e14, type: 2}
-  numberOfBlocksToComplete: 12
+  numberOfBlocksToComplete: 10
   myCompleteEvent: {fileID: 11400000, guid: a3dbf01535469d84b9898fb3a5e067f0, type: 2}
 --- !u!4 &631388516
 Transform:
@@ -1821,11 +1857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413108596505997879, guid: 2cbfc1002e5465242b34e1d0e3cb5ce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6413108596505997879, guid: 2cbfc1002e5465242b34e1d0e3cb5ce7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7255673156151830106, guid: 2cbfc1002e5465242b34e1d0e3cb5ce7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2139,14 +2175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Block_Cube
       objectReference: {fileID: 0}
-    - target: {fileID: 4729285162400285036, guid: 158358ce5a9ad084eaaa499d8322cd1b, type: 3}
-      propertyPath: myCounter
-      value: 
-      objectReference: {fileID: 11400000, guid: 450100465d2640f4698d299abaf13e14, type: 2}
-    - target: {fileID: 4729285162400285036, guid: 158358ce5a9ad084eaaa499d8322cd1b, type: 3}
-      propertyPath: iCanMatchWith
-      value: 
-      objectReference: {fileID: 11400000, guid: 80ff6432f274c994e8ed1eec9a2418f1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 158358ce5a9ad084eaaa499d8322cd1b, type: 3}
 --- !u!1001 &1555593547
