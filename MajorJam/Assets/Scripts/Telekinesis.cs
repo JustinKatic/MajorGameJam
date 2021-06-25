@@ -11,6 +11,7 @@ public class Telekinesis : MonoBehaviour
     private Rigidbody pickedUpObjRB;
     public float objFollowSpeed = 4f;
     public float pullPushSpeed = 4f;
+    public Animator handAnimator;
 
 
     public Transform telekObj;
@@ -38,6 +39,7 @@ public class Telekinesis : MonoBehaviour
 
             if (!hasAnimated)
             {
+                ChangeAnimation("isGrabbing", "isHolding", "isPushing");
                 telekObjZPos -= Time.deltaTime * pullPushSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
                 if (Vector3.Distance(transform.position, telekObj.position) <= 2.2f)
@@ -47,10 +49,14 @@ public class Telekinesis : MonoBehaviour
             }
             else
             {
+                ChangeAnimation("isHolding", "isGrabbing", "isPushing");
+
                 if (Vector3.Distance(transform.position, telekObj.position) >= 2.2f)
                 {
                     if (Input.GetKey(KeyCode.Q))
                     {
+                        ChangeAnimation("isGrabbing", "isHolding", "isPushing");
+
                         telekObjZPos -= Time.deltaTime * pullPushSpeed;
                         telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
                     }
@@ -58,8 +64,11 @@ public class Telekinesis : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, telekObj.position) <= 7f)
                 {
+
                     if (Input.GetKey(KeyCode.E))
                     {
+                        ChangeAnimation( "isPushing","isHolding", "isGrabbing");
+
                         telekObjZPos += Time.deltaTime * pullPushSpeed;
                         telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
                     }
@@ -92,8 +101,6 @@ public class Telekinesis : MonoBehaviour
                 if (hit.transform.GetComponent<BuildingBlocks>())
                     if (hit.transform.GetComponent<BuildingBlocks>().grabbable == false)
                         return;
-
-
                 DisableAction();
                 pickedUpObj = hit.collider.gameObject;
                 Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 5000, Color.red);
@@ -112,6 +119,7 @@ public class Telekinesis : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            IdleAnimation();
             if (pickedUpObj != null)
             {
                 hasAnimated = false;
@@ -127,6 +135,8 @@ public class Telekinesis : MonoBehaviour
 
     public void PlaceObj()
     {
+        IdleAnimation();
+
         if (pickedUpObj != null)
         {
             hasAnimated = false;
@@ -147,5 +157,20 @@ public class Telekinesis : MonoBehaviour
     void EnableAction()
     {
         _playerMovement.FindAction("Move").Enable();
+    }
+
+    void ChangeAnimation(string active, string disable1, string disable2)
+    {
+        handAnimator.SetTrigger(active);
+        handAnimator.ResetTrigger(disable1);
+        handAnimator.ResetTrigger(disable2);
+    }
+
+    void IdleAnimation()
+    {
+        handAnimator.ResetTrigger("isGrabbing");
+        handAnimator.ResetTrigger("isHolding");
+        handAnimator.ResetTrigger("isPushing");
+
     }
 }

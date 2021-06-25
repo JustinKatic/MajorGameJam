@@ -21,5 +21,14 @@ public class DebrisTrigger : MonoBehaviour
             audioFX.Play();
             camShake.Play("CamShake");
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            fx1.Play();
+            fx2.Play();
+            fx3.Play();
+            fx4.Play();
+            audioFX.Play();
+            camShake.Play("CamShakeBig");
+        }
     }
 }
