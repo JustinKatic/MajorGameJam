@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5973859744122203044}
   - component: {fileID: 3348636165292957520}
   - component: {fileID: 288745102}
-  - component: {fileID: 288745103}
   - component: {fileID: 288745101}
+  - component: {fileID: 6069536910554922384}
   m_Layer: 6
   m_Name: SM_Block_StarPrism_low
   m_TagString: Untagged
@@ -100,20 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &288745103
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6963780118066035359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5159961023347624661, guid: c39f98621d78bb64695e27834118f719, type: 3}
 --- !u!114 &288745101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +118,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   grabbable: 1
-  placementRotationSpeed: 1.5
   rayCastDown: 0
+--- !u!64 &6069536910554922384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963780118066035359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8187218262909688309, guid: 94e40ccb3ab050345869cd64fc113e71, type: 3}
 --- !u!1 &8143243408250463915
 GameObject:
   m_ObjectHideFlags: 0
