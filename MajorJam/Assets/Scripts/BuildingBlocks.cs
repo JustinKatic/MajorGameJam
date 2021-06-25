@@ -54,7 +54,7 @@ public class BuildingBlocks : MonoBehaviour
             else
                 Debug.Log("WRONG OBJ U FUCKING IDIOT");
         }
-        Debug.DrawRay(transform.position, transform.transform.TransformDirection(Vector3.down) * 1, Color.red);
+        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1, Color.red);
     }
 
     public void MoveBlocksTowards()
@@ -73,8 +73,12 @@ public class BuildingBlocks : MonoBehaviour
             if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < 1f)
             {
                 shouldMoveTowards = false;
-                objToMoveTowards.GetComponent<MeshRenderer>().enabled = true;
+                objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
                 objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
+
+                Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());
+                
+                
                 Destroy(gameObject);
                 if (myCounter != null)
                     myCounter.value += 1;
