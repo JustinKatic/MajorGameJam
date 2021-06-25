@@ -68,6 +68,7 @@ public class BuildingBlocks : MonoBehaviour
                 shouldMoveTowards = false;
                 objToMoveTowards.GetComponent<MeshRenderer>().enabled = true;
                 objToMoveTowards.GetComponent<Collider>().isTrigger = false;
+                objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
                 Destroy(gameObject);
                 if (myCounter != null)
                     myCounter.value += 1;

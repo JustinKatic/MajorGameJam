@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e666466e158183e4193ff83c4be6d435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowedMatch: {fileID: 11400000, guid: 37b9769a6bf9e0147b7bdcf548310b25, type: 2}
+  allowedMatch: {fileID: 11400000, guid: 9323f7d7c34303c4cad3496e8177a7f4, type: 2}
 --- !u!65 &401069145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573726395}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &573726401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,7 +1871,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015338767}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1015338773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,13 +1980,14 @@ GameObject:
   - component: {fileID: 1166572632}
   - component: {fileID: 1166572634}
   - component: {fileID: 1166572635}
+  - component: {fileID: 1166572636}
   m_Layer: 10
   m_Name: DoorBlockG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1166572631
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,7 +2050,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166572630}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &1166572634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2076,6 +2077,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedMatch: {fileID: 11400000, guid: c6b0337256d003b4394b198d7ca147a8, type: 2}
+--- !u!114 &1166572636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166572630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 1795451125}
 --- !u!1 &1255153450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2383,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479922483}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1606113826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,13 +2427,14 @@ GameObject:
   - component: {fileID: 1795451127}
   - component: {fileID: 1795451129}
   - component: {fileID: 1795451130}
+  - component: {fileID: 1795451131}
   m_Layer: 10
   m_Name: DoorBlockB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1795451126
 Transform:
   m_ObjectHideFlags: 0
@@ -2482,7 +2497,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795451125}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &1795451129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2509,6 +2524,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedMatch: {fileID: 11400000, guid: 9944eea56e40a484aa151ae0b741f0ef, type: 2}
+--- !u!114 &1795451131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795451125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 0}
 --- !u!1001 &1831681085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2661,6 +2689,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
   m_PrefabInstance: {fileID: 1869275661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1878195698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878195701}
+  - component: {fileID: 1878195700}
+  - component: {fileID: 1878195699}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1878195699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878195698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1878195700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878195698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1878195701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878195698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1991215452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2906,7 +3000,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6941210110633958654}
-  m_Mesh: {fileID: 8772195190914707913, guid: 72b5f16ef9fbf7b498fc409bb11b5b99, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6941210110633958654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,6 +3014,7 @@ GameObject:
   - component: {fileID: 8886971652512972075}
   - component: {fileID: 6941210110633958655}
   - component: {fileID: 6941210110633958656}
+  - component: {fileID: 6941210110633958657}
   m_Layer: 10
   m_Name: DoorBlockR
   m_TagString: Untagged
@@ -2953,6 +3048,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedMatch: {fileID: 11400000, guid: 9323f7d7c34303c4cad3496e8177a7f4, type: 2}
+--- !u!114 &6941210110633958657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941210110633958654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 1166572630}
 --- !u!4 &7719153806870545988
 Transform:
   m_ObjectHideFlags: 0
