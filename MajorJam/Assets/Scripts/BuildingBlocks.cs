@@ -33,7 +33,7 @@ public class BuildingBlocks : MonoBehaviour
 
     public void CheckForCorrectObj()
     {
-        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(Vector3.down), out hit, 1f, BuildingBlockLayer))
+        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(Vector3.down), out hit, 1.5f, BuildingBlockLayer))
         {
             if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {

@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 1094868294591766146}
   - component: {fileID: 5973859744122203044}
   - component: {fileID: 3348636165292957520}
-  m_Layer: 0
+  - component: {fileID: 384126117}
+  - component: {fileID: 384126116}
+  - component: {fileID: 384126118}
+  m_Layer: 10
   m_Name: SM_Block_StarPrism_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +84,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &384126117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963780118066035359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8187218262909688309, guid: 94e40ccb3ab050345869cd64fc113e71, type: 3}
+--- !u!114 &384126116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963780118066035359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e666466e158183e4193ff83c4be6d435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedMatch: {fileID: 11400000, guid: acb701c87a4b3234d848e09a534cd3ee, type: 2}
+--- !u!114 &384126118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963780118066035359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 0}
 --- !u!1 &8143243408250463915
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8811657780600454161}
   m_Layer: 0
-  m_Name: SM_Block_StarPrism
+  m_Name: SM_Block_StarPrism Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8143243408250463915}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

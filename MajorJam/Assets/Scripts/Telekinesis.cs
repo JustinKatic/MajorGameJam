@@ -51,7 +51,7 @@ public class Telekinesis : MonoBehaviour
             {
                 ChangeAnimation("isHolding", "isGrabbing", "isPushing");
 
-                if (Vector3.Distance(transform.position, telekObj.position) >= 2.2f)
+                if (Vector3.Distance(transform.position, telekObj.position) >= 3f)
                 {
                     if (Input.GetKey(KeyCode.Q))
                     {
@@ -62,7 +62,7 @@ public class Telekinesis : MonoBehaviour
                     }
                 }
 
-                if (Vector3.Distance(transform.position, telekObj.position) <= 7f)
+                if (Vector3.Distance(transform.position, telekObj.position) <= 10f)
                 {
 
                     if (Input.GetKey(KeyCode.E))
