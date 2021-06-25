@@ -56,18 +56,15 @@ public class BuildingBlocks : MonoBehaviour
             float step = placementSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
 
-            //rotate towards position
-            float singleStep = placementRotationSpeed * Time.deltaTime;
-            // Rotate the forward vector towards the target direction by one step
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, objToMoveTowards.TransformDirection(Vector3.forward), singleStep, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDirection);
+            transform.GetComponent<MeshCollider>().enabled = false;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 
             //if (transform.position == objToMoveTowards.position && transform.rotation == objToMoveTowards.rotation)
-            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f && Quaternion.Angle(objToMoveTowards.rotation, Quaternion.identity) < 2f)
+            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < 1f)
             {
                 shouldMoveTowards = false;
                 objToMoveTowards.GetComponent<MeshRenderer>().enabled = true;
-                objToMoveTowards.GetComponent<Collider>().isTrigger = false;
                 objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
                 Destroy(gameObject);
                 if (myCounter != null)
