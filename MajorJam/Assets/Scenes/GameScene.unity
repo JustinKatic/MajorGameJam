@@ -1855,10 +1855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1425461413}
     m_Modifications:
-    - target: {fileID: 233438306, guid: 3e0c754d604d0834395b1ced634ed773, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 186096686798748729, guid: 3e0c754d604d0834395b1ced634ed773, type: 3}
       propertyPath: m_Name
       value: SM_Block_Sphere
@@ -1947,10 +1943,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1425461413}
     m_Modifications:
-    - target: {fileID: 288745103, guid: 7ef546ea0d983b540b4aa1861dfeebca, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8143243408250463915, guid: 7ef546ea0d983b540b4aa1861dfeebca, type: 3}
       propertyPath: m_Name
       value: SM_Block_StarPrism
@@ -3061,10 +3053,6 @@ PrefabInstance:
     - target: {fileID: 7298058108477079031, guid: dd646345ad0a8fd45b80d659afbf5529, type: 3}
       propertyPath: m_Name
       value: SM_Block_FlowerPrism
-      objectReference: {fileID: 0}
-    - target: {fileID: 7656136674046319199, guid: dd646345ad0a8fd45b80d659afbf5529, type: 3}
-      propertyPath: m_Convex
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7929776275665659725, guid: dd646345ad0a8fd45b80d659afbf5529, type: 3}
       propertyPath: m_RootOrder

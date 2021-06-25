@@ -27,6 +27,9 @@ public class BuildingBlocks : MonoBehaviour
 
     DebrisTrigger debrisTrigger;
 
+    AudioSource audioSource;
+    public AudioClip woodSlottingInHoleSound;
+
 
     private void Start()
     {
@@ -34,6 +37,7 @@ public class BuildingBlocks : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         debrisTrigger = GameObject.FindGameObjectWithTag("Debris").GetComponent<DebrisTrigger>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -72,7 +76,7 @@ public class BuildingBlocks : MonoBehaviour
             raycastDir = Vector3.up;
 
 
-        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 1.5f, BuildingBlockLayer))
+        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 2.5f, BuildingBlockLayer))
         {
             if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
@@ -81,6 +85,7 @@ public class BuildingBlocks : MonoBehaviour
                 grabbable = false;
                 telekinesis.PlaceObj();
                 objToMoveTowards = hit.transform;
+                audioSource.PlayOneShot(woodSlottingInHoleSound);
             }
             else
             {
@@ -90,15 +95,13 @@ public class BuildingBlocks : MonoBehaviour
                     tempObj.AddForce(-hit.transform.position,ForceMode.Impulse);
             }
         }
-        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 1.5f, Color.red);
+        Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 2.5f, Color.red);
     }
 
     public void MoveBlocksTowards()
     {
         if (shouldMoveTowards)
         {
-
-
             transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 
             if (Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < .1f)
