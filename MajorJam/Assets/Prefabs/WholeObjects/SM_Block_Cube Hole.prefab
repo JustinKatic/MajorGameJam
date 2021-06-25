@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8779807845996157613}
   - component: {fileID: 7813786803175059163}
   - component: {fileID: 5679540107263912607}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Block_Cube Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
