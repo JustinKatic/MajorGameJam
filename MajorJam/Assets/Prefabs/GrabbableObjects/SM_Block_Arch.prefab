@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 497886098346008564}
   - component: {fileID: 4216164186808699910}
   - component: {fileID: 450190160146233517}
-  - component: {fileID: 1931580437}
   - component: {fileID: 1002413671122644554}
+  - component: {fileID: 1931580437}
   - component: {fileID: 742348790}
   m_Layer: 6
   m_Name: SM_Block_Arch_low
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1931580437
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6130180857395572276}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5159961023347624661, guid: c39f98621d78bb64695e27834118f719, type: 3}
 --- !u!54 &1002413671122644554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,6 +100,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &1931580437
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130180857395572276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5159961023347624661, guid: c39f98621d78bb64695e27834118f719, type: 3}
 --- !u!114 &742348790
 MonoBehaviour:
   m_ObjectHideFlags: 0

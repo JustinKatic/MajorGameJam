@@ -196,6 +196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1229343303}
     m_Modifications:
+    - target: {fileID: 6963780118066035359, guid: 7ef546ea0d983b540b4aa1861dfeebca, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8143243408250463915, guid: 7ef546ea0d983b540b4aa1861dfeebca, type: 3}
       propertyPath: m_Name
       value: SM_Block_StarPrism
