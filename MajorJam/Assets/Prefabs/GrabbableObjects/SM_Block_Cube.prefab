@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3859446966100413279}
   - component: {fileID: 6593432394372463333}
   - component: {fileID: 7548934857001450190}
+  - component: {fileID: 4729285162400285036}
   m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
@@ -30,8 +31,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8881857499960296079}
+  m_Children: []
   m_Father: {fileID: 130878896758575429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,6 +113,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4729285162400285036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176623502275467437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc9b19e86a265642803976b953ee920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iCanMatchWith: {fileID: 11400000, guid: 9944eea56e40a484aa151ae0b741f0ef, type: 2}
+  myCounter: {fileID: 0}
+  BuildingBlockLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  grabbable: 1
+  placementSpeed: 0.5
+  placementRotationSpeed: 1.5
+  rayCastDown: 0
 --- !u!1 &764249664820317183
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,54 +165,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2637087424046391924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8881857499960296079}
-  - component: {fileID: 7797774793968677356}
-  m_Layer: 6
-  m_Name: RayPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8881857499960296079
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2637087424046391924}
-  m_LocalRotation: {x: -0.5011137, y: 0.5011137, z: 0.49888378, w: 0.49888378}
-  m_LocalPosition: {x: 0.659, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6719295835017806335}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &7797774793968677356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2637087424046391924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc9b19e86a265642803976b953ee920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iCanMatchWith: {fileID: 11400000, guid: 9944eea56e40a484aa151ae0b741f0ef, type: 2}
-  myCounter: {fileID: 0}
-  BuildingBlockLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  grabbable: 1
-  placementSpeed: 0.5
-  placementRotationSpeed: 0.5
