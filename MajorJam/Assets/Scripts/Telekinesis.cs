@@ -42,7 +42,7 @@ public class Telekinesis : MonoBehaviour
                 ChangeAnimation("isGrabbing", "isHolding", "isPushing");
                 telekObjZPos -= Time.deltaTime * pullPushSpeed;
                 telekObj.localPosition = new Vector3(0, 0, telekObjZPos);
-                if (Vector3.Distance(transform.position, telekObj.position) <= 2.2f)
+                if (Vector3.Distance(transform.position, telekObj.position) <= 3f)
                 {
                     hasAnimated = true;
                 }
