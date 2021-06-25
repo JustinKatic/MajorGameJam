@@ -10,25 +10,23 @@ public class DebrisTrigger : MonoBehaviour
     public ParticleSystem fx4;
     public AudioSource audioFX;
     public Animator camShake;
-    void Update()
+
+    public void PlayFX()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            fx1.Play();
-            fx2.Play();
-            fx3.Play();
-            fx4.Play();
-            audioFX.Play();
-            camShake.Play("CamShake");
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            fx1.Play();
-            fx2.Play();
-            fx3.Play();
-            fx4.Play();
-            audioFX.Play();
-            camShake.Play("CamShakeBig");
-        }
+        fx1.Play();
+        fx2.Play();
+        fx3.Play();
+        fx4.Play();
+        audioFX.Play();
+        camShake.Play("CamShake");
+    }
+    public void PlayWallFX()
+    {
+        fx1.Play();
+        fx2.Play();
+        fx3.Play();
+        fx4.Play();
+        audioFX.Play();
+        camShake.Play("CamShakeBig");
     }
 }

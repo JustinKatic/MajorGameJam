@@ -11,7 +11,7 @@ public class BuildingBlocks : MonoBehaviour
     bool shouldMoveTowards = false;
     public bool grabbable = true;
 
-    public float placementSpeed = 0.5f;
+    private float placementSpeed = .5f;
     public float placementRotationSpeed = 0.5f;
 
     public bool rayCastDown;
@@ -22,9 +22,17 @@ public class BuildingBlocks : MonoBehaviour
 
     Vector3 raycastDir;
 
+    Vector3 startPos;
+    Quaternion startRot;
+
+    DebrisTrigger debrisTrigger;
+
     private void Start()
     {
         telekinesis = GameObject.FindGameObjectWithTag("Player").GetComponent<Telekinesis>();
+        startPos = transform.position;
+        startRot = transform.rotation;
+        debrisTrigger = GameObject.FindGameObjectWithTag("Debris").GetComponent<DebrisTrigger>();
     }
 
     void Update()
@@ -34,6 +42,15 @@ public class BuildingBlocks : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Reset")
+        {
+            transform.position = startPos;
+            transform.rotation = startRot;
+        }
+    }
+
 
     public void CheckForCorrectObj()
     {
@@ -42,7 +59,7 @@ public class BuildingBlocks : MonoBehaviour
         else
             raycastDir = Vector3.up;
 
-        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 1.5f, BuildingBlockLayer))
+        if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 3f, BuildingBlockLayer))
         {
             if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
@@ -73,13 +90,15 @@ public class BuildingBlocks : MonoBehaviour
             if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < 1f)
             {
                 shouldMoveTowards = false;
-                objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
+                //objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
                 objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
 
                 Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());
-                
-                
-                Destroy(gameObject);
+
+                debrisTrigger.PlayFX();
+
+
+                //Destroy(gameObject);
                 if (myCounter != null)
                     myCounter.value += 1;
             }
