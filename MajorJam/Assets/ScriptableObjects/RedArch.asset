@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86660f1654032b24db648b2920700e16, type: 3}
   m_Name: RedArch
   m_EditorClassIdentifier: 
-  myMatch: {fileID: 0}
+  myMatch: {fileID: 11400000}
