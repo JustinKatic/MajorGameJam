@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74097596}
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 2.246, z: -0.000000059604645}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 5.29, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2963314284620535044}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &74097598
 Light:
   m_ObjectHideFlags: 0
@@ -40,13 +40,13 @@ Light:
   m_GameObject: {fileID: 74097596}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.7264151, g: 0.6832079, b: 0.56537026, a: 1}
-  m_Intensity: 0.25
-  m_Range: 47.1
-  m_SpotAngle: 179
-  m_InnerSpotAngle: 56.961357
+  m_Color: {r: 0.9716981, g: 0.73458225, b: 0.27959237, a: 1}
+  m_Intensity: 17.5
+  m_Range: 12.8
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -702,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 2783184059496819323, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dccf084138b4a5e438a1e38acc530379, type: 2}
     - target: {fileID: 5866666021909216657, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
       propertyPath: m_Controller
       value: 

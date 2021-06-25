@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1582516977341998724}
   - component: {fileID: 1582516977341998727}
+  - component: {fileID: 6588899706497316301}
   m_Layer: 0
   m_Name: PostProcessingVolume
   m_TagString: Untagged
@@ -48,3 +49,22 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 0492d8e1331cd484f830cdcd8d6c84b0, type: 2}
+--- !u!95 &6588899706497316301
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582516977341998726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2324e88f8f3f244996255979de970e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
