@@ -140,6 +140,7 @@ MonoBehaviour:
     m_Bits: 64
   objFollowSpeed: 4
   pullPushSpeed: 4
+  handAnimator: {fileID: 336104766098491963}
   telekObj: {fileID: 1977943106}
   rotateSpeed: 100
 --- !u!1 &6179079601269175030
@@ -697,10 +698,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7461f83e43e2d614ea467767388e1345, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
 --- !u!4 &5929614898834182209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
+  m_PrefabInstance: {fileID: 6179079602290128810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &336104766098491963 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: aa0f0c27921552e4f976e5ef6861527d, type: 3}
   m_PrefabInstance: {fileID: 6179079602290128810}
   m_PrefabAsset: {fileID: 0}
