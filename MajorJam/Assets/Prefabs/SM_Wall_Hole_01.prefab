@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4834295444407996141}
   - component: {fileID: 7273921831947123239}
   m_Layer: 0
-  m_Name: SM_Wall_Blank
+  m_Name: SM_Wall_Hole_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9219665781590399986}
-  m_Mesh: {fileID: -4378302469571326131, guid: 0a284a534b6eaa541a12cb0bf23b62be, type: 3}
+  m_Mesh: {fileID: -5988735333761458789, guid: 07367d36845cfcb4dba4e8ca9293469e, type: 3}
 --- !u!23 &7273921831947123239
 MeshRenderer:
   m_ObjectHideFlags: 0

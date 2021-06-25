@@ -7,6 +7,5 @@ public class AddRigidBody : MonoBehaviour
     public void AddRigidBodyTooObj()
     {
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-
     }
 }
