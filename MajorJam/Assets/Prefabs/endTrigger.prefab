@@ -109,7 +109,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2589559731432390558}
-  - component: {fileID: 4352546802545054354}
   m_Layer: 0
   m_Name: endTrigger
   m_TagString: Untagged
@@ -133,19 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4352546802545054354
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6752134280236222970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8239000061146669390
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8239000061146669390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1505.2365, y: 93.4958, z: 1505.2365}
+  m_LocalPosition: {x: 0, y: -13.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2589559731432390558}
   m_RootOrder: 0
@@ -240,7 +226,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 70, y: 1, z: 70}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6557341792428887905
 MonoBehaviour:
@@ -356,19 +342,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7729973450648395567, guid: 1f89375fbae49494b82afdc22071b23e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7729973450648395567, guid: 1f89375fbae49494b82afdc22071b23e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7852058321945814704, guid: 1f89375fbae49494b82afdc22071b23e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 7852058321945814704, guid: 1f89375fbae49494b82afdc22071b23e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f89375fbae49494b82afdc22071b23e, type: 3}

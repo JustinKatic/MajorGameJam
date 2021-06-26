@@ -6,11 +6,10 @@ using UnityEngine.InputSystem;
 public class Telekinesis : MonoBehaviour
 {
     public LayerMask Grabbale;
-    public LayerMask Wall;
 
     Transform cameraTransform;
-    public GameObject pickedUpObj;
-    public Rigidbody pickedUpObjRB;
+    [HideInInspector] public GameObject pickedUpObj;
+    [HideInInspector] public Rigidbody pickedUpObjRB;
     public float objFollowSpeed = 4f;
     public float pullPushSpeed = 4f;
     public Animator handAnimator;

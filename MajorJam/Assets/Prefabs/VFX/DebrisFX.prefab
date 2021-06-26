@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3834960798029828434}
   m_Layer: 0
   m_Name: DebrisFX
-  m_TagString: Untagged
+  m_TagString: Debris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,11 +163,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -230,11 +230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 6.61
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -297,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -364,11 +364,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.5
+      value: -8.39
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 1587251853184904804, guid: fcd3b62b8fbe87f458d2fde00b9c62c2, type: 3}
       propertyPath: m_LocalPosition.z
