@@ -164,10 +164,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   grabbable: 1
-  rayCastDown: 0
+  rayCastDown: 1
   woodSlottingInHoleSound: {fileID: 8300000, guid: e4bc31d9c9c164642a0f5917afa5dfde, type: 3}
-  hitWallSound: {fileID: 8300000, guid: a472a502b0eebc346b82bc5af24ec3c3, type: 3}
-  wrongObjectSound: {fileID: 8300000, guid: bdc88bb8e2135784ab6c7762711f02c5, type: 3}
+  hitWallSound: {fileID: 0}
+  wrongObjectSound: {fileID: 0}
 --- !u!82 &1437502820
 AudioSource:
   m_ObjectHideFlags: 0

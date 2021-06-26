@@ -31,6 +31,7 @@ public class BuildingBlocks : MonoBehaviour
     public AudioClip woodSlottingInHoleSound;
     public AudioClip hitWallSound;
     public AudioClip wrongObjectSound;
+    bool initialPositionReached = false;
 
 
 
@@ -83,7 +84,7 @@ public class BuildingBlocks : MonoBehaviour
 
         if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 2.5f, BuildingBlockLayer))
         {
-            if (hit.transform.GetComponent<IsShapeAllowed>()!= null && hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
+            if (hit.transform.GetComponent<IsShapeAllowed>() != null && hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
                 transform.GetComponent<Collider>().enabled = false;
                 shouldMoveTowards = true;
@@ -106,33 +107,41 @@ public class BuildingBlocks : MonoBehaviour
 
     public void MoveBlocksTowards()
     {
+        //insert comments here justin
         if (shouldMoveTowards)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
-
-            float angle = Quaternion.Angle(transform.rotation, objToMoveTowards.rotation);
-            if (angle < .1f)
+            float step = placementSpeed * Time.deltaTime;
+            if (!initialPositionReached)
+                transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.GetChild(0).transform.position, step);
+            if (Vector3.Distance(transform.position, objToMoveTowards.GetChild(0).transform.position) <= 0.05f)
             {
-                float step = placementSpeed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
+                initialPositionReached = true;
             }
-
-
-            //if (transform.position == objToMoveTowards.position && transform.rotation == objToMoveTowards.rotation)
-            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= 0.05f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < .1f)
+            if (initialPositionReached)
             {
-                shouldMoveTowards = false;
-                objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
-                objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
+                transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 
-                Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());
+                float angle = Quaternion.Angle(transform.rotation, objToMoveTowards.rotation);
+                if (angle < 0.1f)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
+                }
 
-                debrisTrigger.PlayFX();
+                //if (transform.position == objToMoveTowards.position && transform.rotation == objToMoveTowards.rotation)
+                if (Vector3.Distance(transform.position, objToMoveTowards.position) <= 0.05f && angle < 0.1f)
+                {
+                    shouldMoveTowards = false;
+                    objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
+                    objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
 
+                    Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());
 
-                //Destroy(gameObject);
-                if (myCounter != null)
-                    myCounter.value += 1;
+                    debrisTrigger.PlayFX();
+
+                    //Destroy(gameObject);
+                    if (myCounter != null)
+                        myCounter.value += 1;
+                }
             }
         }
     }

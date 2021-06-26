@@ -134,8 +134,8 @@ MonoBehaviour:
   grabbable: 1
   rayCastDown: 0
   woodSlottingInHoleSound: {fileID: 0}
-  hitWallSound: {fileID: 8300000, guid: a472a502b0eebc346b82bc5af24ec3c3, type: 3}
-  wrongObjectSound: {fileID: 8300000, guid: bdc88bb8e2135784ab6c7762711f02c5, type: 3}
+  hitWallSound: {fileID: 0}
+  wrongObjectSound: {fileID: 0}
 --- !u!82 &5584363568090668175
 AudioSource:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130878896758575429}
   m_Layer: 0
-  m_Name: SM_Block_Cube
+  m_Name: BuildingBlockCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
