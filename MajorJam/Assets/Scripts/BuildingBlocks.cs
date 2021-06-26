@@ -11,7 +11,7 @@ public class BuildingBlocks : MonoBehaviour
     bool shouldMoveTowards = false;
     public bool grabbable = true;
 
-    private float placementSpeed = 1.5f;
+    private float placementSpeed = 3f;
     private float placementRotationSpeed = 3f;
 
     public bool rayCastDown;
@@ -83,7 +83,7 @@ public class BuildingBlocks : MonoBehaviour
 
         if (grabbable == true && Physics.Raycast(transform.position, transform.transform.TransformDirection(raycastDir), out hit, 2.5f, BuildingBlockLayer))
         {
-            if (hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
+            if (hit.transform.GetComponent<IsShapeAllowed>()!= null && hit.transform.GetComponent<IsShapeAllowed>().allowedMatch.myMatch == iCanMatchWith.myMatch)
             {
                 transform.GetComponent<Collider>().enabled = false;
                 shouldMoveTowards = true;
@@ -98,7 +98,7 @@ public class BuildingBlocks : MonoBehaviour
                 telekinesis.DropObj();
                 audioSource.PlayOneShot(wrongObjectSound);
                 if (tempObj != null)
-                    tempObj.AddForce(-hit.transform.position,ForceMode.Impulse);
+                    tempObj.AddForce(-hit.transform.position, ForceMode.Impulse);
             }
         }
         Debug.DrawRay(transform.position, transform.transform.TransformDirection(raycastDir) * 2.5f, Color.red);
@@ -110,7 +110,8 @@ public class BuildingBlocks : MonoBehaviour
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, objToMoveTowards.rotation, placementRotationSpeed * Time.deltaTime);
 
-            if (Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < .1f)
+            float angle = Quaternion.Angle(transform.rotation, objToMoveTowards.rotation);
+            if (angle < .1f)
             {
                 float step = placementSpeed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, objToMoveTowards.position, step);
@@ -118,10 +119,10 @@ public class BuildingBlocks : MonoBehaviour
 
 
             //if (transform.position == objToMoveTowards.position && transform.rotation == objToMoveTowards.rotation)
-            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= .1f)
+            if (Vector3.Distance(transform.position, objToMoveTowards.position) <= 0.05f && Quaternion.Angle(objToMoveTowards.localRotation, Quaternion.identity) < .1f)
             {
                 shouldMoveTowards = false;
-                //objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
+                objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
                 objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
 
                 Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());

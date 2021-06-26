@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 523176094}
   - component: {fileID: 523176095}
   - component: {fileID: 105255945}
-  - component: {fileID: 105255943}
-  - component: {fileID: 105255944}
   m_Layer: 10
   m_Name: SM_Block_FlowerPrism
   m_TagString: Untagged
@@ -65,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b4c3ddee43f9bd42b33db5cada005aa, type: 2}
+  - {fileID: 2100000, guid: f24b0d3a1e9be244d82e794c94078022, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToEnable: {fileID: 0}
+  objectToEnable:
+  - {fileID: 0}
 --- !u!64 &105255945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -141,32 +140,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6432045636053331935, guid: 18253dd3794eeae4ca99866d530e4526, type: 3}
---- !u!114 &105255943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046784967361590356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09317931d7177e84c8a9413ff9701a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToEnable: {fileID: 0}
---- !u!114 &105255944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046784967361590356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e666466e158183e4193ff83c4be6d435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allowedMatch: {fileID: 11400000, guid: f42046b780ed88f44bd573d509ed1945, type: 2}
 --- !u!1 &7298058108477079031
 GameObject:
   m_ObjectHideFlags: 0
