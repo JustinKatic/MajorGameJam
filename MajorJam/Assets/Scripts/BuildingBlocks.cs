@@ -131,10 +131,10 @@ public class BuildingBlocks : MonoBehaviour
                 if (Vector3.Distance(transform.position, objToMoveTowards.position) <= 0.05f && angle < 0.1f)
                 {
                     shouldMoveTowards = false;
-                    objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
+                    //objToMoveTowards.GetComponent<MeshRenderer>().enabled = false;
                     objToMoveTowards.GetComponent<EnableNextObject>().EnableObject();
 
-                    Destroy(objToMoveTowards.GetComponent<IsShapeAllowed>());
+                    Destroy(objToMoveTowards.gameObject);
 
                     debrisTrigger.PlayFX();
 
