@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void GoToScene(string sceneName)
     {
